@@ -1,6 +1,7 @@
 import express from 'express';
 import questoesRotas from './routes/questoesRotas.js'
 import authRotas from './routes/authRotas.js';
+import gerarQuestao from './routes/gerarQuestao.js';
 import cors from 'cors';
 const app = express();
 const PORT = 3000;
@@ -13,12 +14,13 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use('/questoes', questoesRotas);
 app.use('/auth', authRotas)
+app.use('/api', gerarQuestao)
 
 
 
 
 app.get('/', (req, res) => {
-	res.status(200).send("API de Livros");
+	res.status(200).send("API de Questões");
 })
 
 

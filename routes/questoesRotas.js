@@ -1,6 +1,4 @@
 import express from 'express';
-import OpenAI from 'openai';
-import cors from "cors";
 
 import {
 	listarQuestoesController,
@@ -41,6 +39,7 @@ router.get('/', listarQuestoesController);
 router.get('/:id', obterQuestaoPorIDController);
 
 router.post('/', authMiddleware, upload.single('capa'), criarQuestaoController)
+
 
 router.put('/:id', authMiddleware, upload.single('capa'), atualizarQuestaoController)
 router.delete('/:id', authMiddleware, excluirQuestaoController)

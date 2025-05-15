@@ -50,4 +50,5 @@ const excluirQuestao = async (id) => {
         throw error;
     }
 }
+
 export { listarQuestoes, obterQuestaoPorID, criarQuestao, atualizarQuestao, excluirQuestao };
